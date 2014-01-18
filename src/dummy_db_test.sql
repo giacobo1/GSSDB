@@ -1,10 +1,12 @@
 --  psql -U postgres -h localhost -f /home/giacobo1/Dropbox/GSSDB/src/dummy_db_test.sql  postgres
+--  para logar: psql -U postgres -h localhost 
 -- TODO: Criar as consultas e as "pseud-views"
 -- TODO: Criar um user para o app..
+-- TODO: talvez se tudo ficar default - user postgres e search_path public funcione;
 
 CREATE DATABASE GSSDB;
 CREATE SCHEMA GSSDB;
-ALTER USER postgres SET search_path TO GSSDB;
+ALTER USER postgres SET search_path TO GSSDB,public;
 
 CREATE TABLE GSSDB.Cliente
 (
